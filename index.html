@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asadullah</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar container-fluid navbar-expand-lg black">
+    <div class="container">
+      <a class="logo" href="#">
+        <img src="images/img1.jpg" alt="Your Profile Picture" class="img-fluid profile-pic">
+        Asadullah.
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse justify-content-end navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-light active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <section id="home" class="home container-fluid">
+    <div class="container">
+      <div class="h1-text">
+        <h1>I'm <span class="auto-input"></span></h1>
+        <p>You can reach out to me if you need any help in making a website for your business.</p>
+        <div class="btns">
+          <a href="#contact">Contact Me</a>
+          <a class="btn1" href="#projects">My Projects</a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+  <!-- Add more sections like About, Services, etc. here -->
+  
+
+
+  <section id="about" class="container-fluid black about">
+    <div class="container parent-container">
+      <div class="row">
+        <div class="col-md">
+          <h1 class="h1">
+            About Me
+          </h1>
+          <p class="p1">
+            I am a web developer with a passion for creating visually appealing and user-friendly websites.
+            I am always looking for ways to improve
+            my skills and stay up-to-date with the latest technologies.
+          </p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div id="skills" class="tab-contents active-tab">
+            <div class="skills-container container">
+              <div class="skill">
+                <label for="html">HTML</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="css">CSS</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="javascript">JavaScript</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="python">Python</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="jquery">jQuery</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 75%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="laravel">Laravel</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="php">PHP</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="react">React JS</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 95%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="nodejs">Node JS</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="mongodb">MongoDB</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%;"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <label for="express">Express JS</label>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 75%;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div id="experience" class="tab-contents">
+            <div class="container">
+              <section class="experience-section">
+                <h2 class="text-center text-light mb-4">Professional Experience</h2>
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Website Making</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Designing and developing websites using various technologies, including HTML, CSS, and
+                          JavaScript.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Responsive Design</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Creating responsive designs that adapt to different screen sizes and devices using CSS media
+                          queries and frameworks.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Web Application Development</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Developing web applications with modern frameworks and libraries such as React, Node.js, and
+                          Express.js.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Backend Management</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Managing backend services, working with databases like MongoDB, and server-side technologies
+                          such as PHP and Laravel.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Company Work</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Contributing to projects, collaborating with teams, and delivering high-quality solutions
+                          within various companies.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="experience-card">
+                      <div class="experience-header">
+                        <h4>Freelancing</h4>
+                      </div>
+                      <div class="experience-body">
+                        <p>Offering web development and design services to clients, managing projects, and ensuring
+                          client satisfaction.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div id="education" class="tab-contents">
+            <div class="container">
+              <section class="education-section">
+                <h2 class="text-center text-light mb-4">Education</h2>
+                <div id="educationAccordion">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Muslim High School
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#educationAccordion">
+                      <div class="card-body">
+                        <p>Muslim high School Pakistan</p>
+                        <p class="text-muted">2020</p>
+                        <p>Biology Science</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                          aria-expanded="false" aria-controls="collapseTwo">
+                         Muslim Group of College
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                      data-parent="#educationAccordion">
+                      <div class="card-body">
+                        <p>Intermediate Degree in Commemrce</p>
+                        <p class="text-muted">2023</p>
+                        <p>Now Study Advance Artifical Intelligence BS.AI</p>
+                        <p class="text-muted"></p>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                          aria-expanded="false" aria-controls="collapseThree">
+                          Certifications
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#educationAccordion">
+                      <div class="card-body">
+                        <p>Certifications</p>
+                        <p class="text-muted">2022</p>
+                        <p>Honored with Cerntificates as a Mern stack Developer</p>
+                        <p>Full Stack Webdeveloper Certificate from PNY Institute</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <div class="container-fluid black services pt-5" id="services">
+    <section class="container services-section">
+      <h2 class=" h2 text-light ">My Services</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex">
+          <div class="service-box">
+            <i class="fa-solid fa-code"></i>
+            <h3>UI/UX Design</h3>
+            <p>Creating visually appealing and user-friendly designs to enhance user experience.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 d-flex">
+          <div class="service-box">
+            <i class="fa-brands fa-react"></i>
+            <h3>React-Based Projects</h3>
+            <p>Developing dynamic and responsive web applications using React.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 d-flex">
+          <div class="service-box">
+            <i class="fa-solid fa-database"></i>
+            <h3>PHP Backend & Database</h3>
+            <p>Building robust backend systems with PHP, Laravel, jQuery, MongoDB, and more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="portfolio" class="portfolio container-fluid black">
+    <div class="container">
+      <h1 class="text-light ">My Work</h1>
+      <div class="container mt-5">
+        <section class="image-section">
+          <div class="row ">
+            <div class="mb-4 col-md-4">
+              <div class="image-box" style="background-image: url('images/mobile.jpg');">
+                <div class="overlay">
+                  <h3>UI/UX Design</h3>
+                  <p>
+                    "Designing seamless, engaging interfaces that elevate user experiences."
+                  </p>
+                 <a href="web template/template.html" target="_blank"> <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="mb-4 col-md-4">
+              <div class="image-box" style="background-image: url('images/mobile.avif');">
+                <div class="overlay">
+                  <h3>React-Based Projects</h3>
+                  <p>
+                    "Boost your site’s speed and responsiveness with sleek React components."
+                  </p>
+                  <a href=""><i  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="mb-4 col-md-4">
+              <div class="image-box" style="background-image: url('images/database.jpg');">
+                <div class="overlay">
+                  <h3>PHP & Laravel Backend</h3>
+                  <p>
+
+                    "Efficiently managing databases with PHP, MongoDB, and Laravel for robust backend solutions."
+                  </p>
+                 <a href="http://localhost/projectsphp/dashbord.php#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- projects tab -->
+  <div class="container my-5" id="projects">
+    <h1 class="text-center mb-5 text-light">Projects</h1>
+    
+    <!-- Tab Navigation -->
+    <ul class="nav nav-pills justify-content-center mb-4" id="projectTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="all-tab" data-bs-toggle="pill" href="#allProjects" role="tab">All Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="js-tab" data-bs-toggle="pill" href="#jsProjects" role="tab">JS Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="laravel-tab" data-bs-toggle="pill" href="#laravelProjects" role="tab">Laravel Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="htmlcss-tab" data-bs-toggle="pill" href="#htmlCssTemplates" role="tab">HTML/CSS Templates</a>
+      </li>
+    
+    </ul>
+  
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- All Projects (default tab) -->
+      <div class="tab-pane fade show active" id="allProjects" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Random Number Generator Game</h5>
+              <p>A game that generates random numbers with different levels of difficulty.</p>
+              <a href="javascript projects/randomnumgeneratergame.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Dad Jokes App</h5>
+              <p>An app that generates random jokes every time you click the button.</p>
+              <a href="javascript projects/jokegenerater.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+     
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>To-Do List</h5>
+              <p>An app to make your daily Task memorable to you</p>
+              <a href="javascript projects/todolist.html" target="_blank" class="btn btn-outline-light">View Template</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Task Manager App</h5>
+              <p>A task management tool built with React.js for tracking daily tasks.</p>
+              <a href="#" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Digital Clock</h5>
+              <p>A Digital Clock using javascript.</p>
+              <a href="javascript projects/digitalclock.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Weather App</h5>
+              <p>An intuitive global weather app that lets you check the weather for any location around the world.</p>
+              <a href="javascript projects/weatherapp.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Calculator</h5>
+              <p>A Scientific calculator to solve problems.</p>
+              <a href="javascript projects/calculater.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- JS Projects -->
+      <div class="tab-pane fade" id="jsProjects" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Random Number Generator</h5>
+              <p>A game that generates random numbers with different levels of difficulty.</p>
+              <a href="javascript projects/randomnumgeneratergame.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Jokes App</h5>
+              <p>An app that generates random jokes every time you click the button.</p>
+              <a href="javascript projects/jokegenerater.html" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Laravel Projects -->
+      <div class="tab-pane fade" id="laravelProjects" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>E-Commerce Platform</h5>
+              <p>A Laravel-based online shop with user authentication and product management.</p>
+              <a href="#" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- HTML/CSS Templates -->
+      <div class="tab-pane fade" id="htmlCssTemplates" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Portfolio Website</h5>
+              <p>A sleek personal portfolio website template using HTML and CSS.</p>
+              <a href="index.html" target="_blank" class="btn btn-outline-light">View Template</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- React Projects -->
+      <div class="tab-pane fade" id="reactProjects" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="project-card">
+              <h5>Task Manager App</h5>
+              <p>A task management tool built with React.js for tracking daily tasks.</p>
+              <a href="#" target="_blank" class="btn btn-outline-light">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- signup form and contact section -->
+  <div class="container-fluid content black form-section">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-start">
+            <h1>Sign Up</h1>
+            <div class="contact-info">
+                <p><i class="fa-regular fa-paper-plane"></i> &nbsp;asadullahumer7@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> &nbsp;03287886384</p>
+            </div>
+            <h1>Connect With Us</h1>
+            <div class="social-icons pb-2">
+                <a class="px-2" href="https://www.instagram.com/asadullah23201/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a class="px-2"  href="https://www.linkedin.com/in/asaullah-umer-33a528318/?trk=opento_sprofile_goalscard" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="px-2" href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <!-- Second Column: Form -->
+        <div class="col-md-6">
+            <div id="contact" class="signup-form p-4 rounded">
+                <h2 class=" text-white mb-4">Sign Up</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="name" class="text-white">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="text-white">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="text-white">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn mt-4 submit btn-block">Sign Up</button>
+                </form>
+                <div id="formMessage" class="text-center mt-3"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+      <div class="row">
+          <!-- Social Media Icons -->
+          <div class="col-md-12">
+              <div class="social-icons  mb-4">
+                  <a href="https://www.instagram.com/asadullah23201/" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/asaullah-umer-33a528318/?trk=opento_sprofile_goalscard" target="_blank"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              </div>
+          </div>
+          <!-- Copyright Notice -->
+          <div class="col-md-12">
+              <p>&copy; 2024 Asadullah. All Rights Reserved.</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+</body>
+
+</html>

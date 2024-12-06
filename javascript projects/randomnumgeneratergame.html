@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Guessing Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(145deg, #2980b9, #8e44ad);
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .game-container {
+            text-align: center;
+            background-color: #2c3e50;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            width: 400px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            color: #f1c40f;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 1px solid #34495e;
+            margin-bottom: 20px;
+            width: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f39c12;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        #restart {
+            background-color: #c0392b;
+            display: none;
+        }
+
+        #restart:hover {
+            background-color: #e74c3c;
+        }
+
+        #message, #hint {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .hint {
+            margin-top: 20px;
+            animation: bounce 1s ease;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Custom box (popup) */
+        .popup-box {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: fadeInPopup 0.5s ease;
+        }
+
+        @keyframes fadeInPopup {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-content img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .close-popup {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-popup:hover {
+            background-color: #c0392b;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <h1>Guess the Number</h1>
+    <p>Select Level</p>
+    <select id="level" class="form-select mb-3">
+        <option value="10">Level 1 (1-10)</option>
+        <option value="50">Level 2 (1-50)</option>
+        <option value="100">Level 3 (1-100)</option>
+    </select>
+    <input type="number" id="userInput" placeholder="Enter your guess">
+    <div>
+        <button id="guess">Guess</button>
+        <button id="restart">Restart</button>
+    </div>
+    <p id="message" class="mt-3"></p>
+    <p id="hint" class="hint"></p>
+</div>
+
+<!-- Custom Popup Box -->
+<div class="popup-box" id="popupBox">
+    <div class="popup-content">
+        <img id="resultGif" src="" alt="Result GIF">
+        <!-- <p class="fs-2 mt-2 text-success">You Won </p> -->
+        <button class="close-popup" id="closePopup">Close</button>
+    </div>
+</div>
+
+<script>
+    let randomNumber, triesLeft, maxNumber;
+
+    const message = document.getElementById('message');
+    const hint = document.getElementById('hint');
+    const restartButton = document.getElementById('restart');
+    const guessButton = document.getElementById('guess');
+    const userInput = document.getElementById('userInput');
+    const levelSelect = document.getElementById('level');
+    const popupBox = document.getElementById('popupBox');
+    const resultGif = document.getElementById('resultGif');
+    const closePopup = document.getElementById('closePopup');
+
+    function initGame() {
+        maxNumber = parseInt(levelSelect.value);
+        randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+        triesLeft = 3;
+        message.textContent = `You have ${triesLeft} tries left!`;
+        hint.textContent = '';
+        userInput.value = '';
+        restartButton.style.display = 'none';
+        guessButton.style.display = 'inline';
+        popupBox.style.display = 'none'; // Hide popup when restarting
+    }
+
+    function showPopup(result) {
+        if (result === 'win') {
+            resultGif.src = 'https://media.tenor.com/A-ozELwp694AAAAM/thumbs-thumbs-up-kid.gif'; // Win GIF
+        } else {
+            resultGif.src = 'https://media.tenor.com/_KjdG2gdoEMAAAAC/sad-cat.gif'; // Loss GIF
+        }
+        popupBox.style.display = 'flex'; // Show the custom popup
+    }
+
+    function gameOver(result) {
+        if (result === 'win') {
+            message.textContent = 'Congratulations! You guessed the number!';
+        } else {
+            message.textContent = `Game Over! The number was ${randomNumber}.`;
+        }
+        restartButton.style.display = 'inline';
+        guessButton.style.display = 'none';
+        showPopup(result); // Trigger popup
+    }
+
+    guessButton.addEventListener('click', () => {
+        const userGuess = parseInt(userInput.value);
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > maxNumber) {
+            message.textContent = `Please enter a number between 1 and ${maxNumber}.`;
+            return;
+        }
+
+        triesLeft--;
+
+        if (userGuess === randomNumber) {
+            gameOver('win');
+        } else {
+            message.textContent = `Wrong guess! You have ${triesLeft} tries left.`;
+            hint.textContent = userGuess > randomNumber ? 'Hint: Try a lower number.' : 'Hint: Try a higher number.';
+            if (triesLeft === 0) {
+                gameOver('lose');
+            }
+        }
+    });
+
+    restartButton.addEventListener('click', initGame);
+    closePopup.addEventListener('click', () => popupBox.style.display = 'none');
+
+    levelSelect.addEventListener('change', initGame);
+
+    initGame();
+</script>
+
+</body>
+</html>

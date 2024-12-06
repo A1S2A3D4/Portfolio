@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dad Jokes Generator</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.joke-box {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.joke-box p {
+  font-size: 18px;
+  color: #444;
+}
+
+.btn {
+  background-color: #ff6f61;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 5px 20px rgba(255, 111, 97, 0.3);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff4a3b;
+  transform: translateY(-5px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Dad Jokes Generator</h1>
+    <div class="joke-box">
+      <p id="joke">Click "Generate Joke" to see a Dad Joke!</p>
+    </div>
+    <button class="btn" onclick="generateJoke()">Generate Joke</button>
+  </div>
+
+  <script>
+const jokes = [
+  "Why don't skeletons fight each other? They don't have the guts.",
+  "I'm reading a book on anti-gravity. It's impossible to put down!",
+  "What do you call fake spaghetti? An impasta.",
+  "Why can't your nose be 12 inches long? Because then it would be a foot!",
+  "What did one ocean say to the other ocean? Nothing, they just waved.",
+  "I'm on a seafood diet. I see food and I eat it.",
+  "Why don't eggs tell jokes? They'd crack each other up.",
+  "Why did the scarecrow win an award? Because he was outstanding in his field!",
+  "How do you organize a space party? You planet.",
+  "Why don't some couples go to the gym? Because some relationships don't work out.",
+  "Why don't programmers like nature? It has too many bugs.",
+  "Why do we never tell secrets on a farm? Because the potatoes have eyes and the corn has ears.",
+  "Why did the bicycle fall over? Because it was two-tired.",
+  "I told my computer I needed a break, and now it won’t stop sending me Kit-Kat ads.",
+  "Why did the golfer bring an extra pair of pants? In case he got a hole in one.",
+  "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+  "Why was the math book sad? It had too many problems.",
+  "What’s orange and sounds like a parrot? A carrot.",
+  "I asked my dog what's two minus two. He said nothing.",
+  "What’s brown and sticky? A stick."
+];
+
+function generateJoke() {
+  const randomIndex = Math.floor(Math.random() * jokes.length);
+  const jokeElement = document.getElementById('joke');
+  jokeElement.innerText = jokes[randomIndex];
+}
+
+  </script>
+</body>
+</html>

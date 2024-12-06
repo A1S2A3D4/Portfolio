@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #error {
+            color: red;
+        }
+
+        .container {
+            z-index: 1;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .heading p {
+            font-size: 1rem;
+            margin: 5px 0 20px 0;
+            opacity: 0.9;
+        }
+
+        .input-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            flex-grow: 1;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            margin-right: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        .btn {
+            background-color: #27ae60;
+            color: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2ecc71;
+        }
+
+        .forecast {
+            text-align: center;
+        }
+
+        .forecast h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .forecast p {
+            font-size: 1rem;
+            margin: 8px 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .forecast p:first-child {
+            margin-top: 0;
+        }
+
+        .weather-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .input {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .input-box {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <video class="video" src="video2.mp4" loop muted autoplay></video>
+
+    <div class="container">
+        <div class="heading">
+            <h1>Weather Forecast</h1>
+            <p>Enter the city name to check the weather in your area</p>
+        </div>
+        <div class="input-box">
+            <input class="input" type="text" placeholder="Enter City Name" id="input"> 
+            <button class="btn" id="search">Search</button>
+        </div>
+        <div class="forecast">
+            <h2 id="h2"></h2>
+            <p id="p-time"></p>
+            <p id="p-tempc"></p>
+            <i id="weather-icon" class="weather-icon"></i>
+            <p id="p-feelsliketemp"></p>
+            <p id="p-tempf"></p>
+            <p id="p-windspeed"></p>
+        </div>
+        <p id="error"></p>
+    </div>
+
+    <script src="weatherappscript.js"></script>
+
+</body>
+</html>

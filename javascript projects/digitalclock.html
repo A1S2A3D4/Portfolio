@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  font-family: 'Roboto', sans-serif;
+}
+
+.clock-container {
+  text-align: center;
+}
+
+.clock {
+  font-size: 80px;
+  color: #00e5ff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.7), 0 0 20px rgba(0, 229, 255, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+}
+
+.clock span {
+  transition: all 0.3s ease-in-out;
+}
+
+.clock span:hover {
+  color: #ff4081;
+  text-shadow: 0 0 20px rgba(255, 64, 129, 0.7), 0 0 25px rgba(255, 64, 129, 0.5);
+}
+.h1{
+    color: #00e5ff;
+    margin-bottom: 100px;
+    font-size: 3rem;
+}
+
+</style>
+</head>
+<body>
+    <div class="clock-container">
+      <h1 class="h1">Digital Clock</h1>
+      <div class="clock">
+          <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+          <span id="ampm">AM</span>
+        </div>
+  </div>
+
+  <script>
+    function updateClock() {
+  const clock = new Date();
+  let hours = clock.getHours();
+  let minutes = clock.getMinutes();
+  let seconds = clock.getSeconds();
+  let ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; // '0' should be '12'
+  hours = formatTime(hours);
+  minutes = formatTime(minutes);
+  seconds = formatTime(seconds);
+
+  document.getElementById('hours').innerText = hours;
+  document.getElementById('minutes').innerText = minutes;
+  document.getElementById('seconds').innerText = seconds;
+  document.getElementById('ampm').innerText = ampm;
+}
+
+function formatTime(time) {
+  return time < 10 ? `0${time}` : time;
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to avoid 1 second delay
+
+  </script>
+</body>
+</html>
