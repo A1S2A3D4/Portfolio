@@ -691,3 +691,33 @@ h1 {
   object-fit: cover; 
   border-radius: 50%;
 }
+
+.navbar.hidden {
+  visibility: hidden;
+}
+
+
+.home {
+  padding: 100px 0;
+  text-align: center;
+  background: #121212;
+  color: #fff;
+}
+
+.home h1 span {
+  color: red;
+}
+
+.btns a {
+  margin: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background: red;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btns a:hover {
+  background: #e60000;
+}

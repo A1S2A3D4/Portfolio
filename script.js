@@ -53,3 +53,17 @@ document.addEventListener("DOMContentLoaded", function() {
         form.reset();
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.remove("hidden"); // Show the navbar
+    navbar.classList.add("animate__animated", "animate__fadeInDown"); // Add Animate.css animation classes
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        once: false, // Ensures animations replay
+        duration: 1000, // Adjust animation duration (optional)
+        offset: 160, // Adjust animation offset (optional)
+    });
+});
